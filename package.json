@@ -5,8 +5,8 @@
 	"type": "module",
 	"main": "index.js",
 	"exports": {
-		".": "./index.js",
-		"./*": "./*"
+		".": "./package/index.js",
+		"./*": "./package/*"
 	},
 	"scripts": {
 		"test": "esrun test",
@@ -14,7 +14,8 @@
 		"build": "esrun scripts/build",
 		"deploy": "yarn build && yarn test && yarn publish --cwd package",
 		"lint": "eslint source",
-		"lint:fix": "eslint source --fix"
+		"lint:fix": "eslint source --fix",
+		"prepare": "yarn run build"
 	},
 	"repository": {
 		"type": "git",
